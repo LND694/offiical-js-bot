@@ -16,11 +16,11 @@ axios.get('https://api.github.com/repos/CorwinDev/Discord-Bot/releases/latest').
 const webhook = require("./config/webhooks.json");
 const config = require("./config/bot.js");
 const webHooksArray = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
-// Check if .env webhook_id and "XGSdbf2KEgt2tHyN1YblHDul60gjlPtqtlAo5CvM3mBvDVt6cCZnuanTc4etdDEYduW4" are set
-if (process.env.WEBHOOK_ID && "XGSdbf2KEgt2tHyN1YblHDul60gjlPtqtlAo5CvM3mBvDVt6cCZnuanTc4etdDEYduW4") {
+// Check if .env webhook_id and webhook_token are set
+if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
     for (const webhookName of webHooksArray) {
         webhook[webhookName].id = process.env.WEBHOOK_ID;
-        webhook[webhookName].token = "XGSdbf2KEgt2tHyN1YblHDul60gjlPtqtlAo5CvM3mBvDVt6cCZnuanTc4etdDEYduW4";
+        webhook[webhookName].token = process.env.WEBHOOK_TOKEN;
     }
 }
 
@@ -37,7 +37,7 @@ const shardLogs = new Discord.WebhookClient({
 
 const manager = new Discord.ShardingManager('./src/bot.js', {
     totalShards: 'auto',
-    token: "ODEwNTcyMDU0OTgxNTA5MTMw.Gwb7sK.5shdrzYUwRs-y-65-2884eH6wa_jijl4fDlN-k",
+    token: process.env.DISCORD_TOKEN,
     respawn: true
 });
 if (process.env.TOPGG_TOKEN) {
