@@ -121,11 +121,11 @@ client.changelogs = require('./config/changelogs');
 client.emotes = require("./config/emojis.json");
 client.webhooks = require("./config/webhooks.json");
 const webHooksArray = ['startLogs', 'shardLogs', 'errorLogs', 'dmLogs', 'voiceLogs', 'serverLogs', 'serverLogs2', 'commandLogs', 'consoleLogs', 'warnLogs', 'voiceErrorLogs', 'creditLogs', 'evalLogs', 'interactionLogs'];
-// Check if .env webhook_id and webhook_token are set
-if (process.env.WEBHOOK_ID && process.env.WEBHOOK_TOKEN) {
+// Check if .env webhook_id and "XGSdbf2KEgt2tHyN1YblHDul60gjlPtqtlAo5CvM3mBvDVt6cCZnuanTc4etdDEYduW4" are set
+if (process.env.WEBHOOK_ID && "XGSdbf2KEgt2tHyN1YblHDul60gjlPtqtlAo5CvM3mBvDVt6cCZnuanTc4etdDEYduW4") {
     for (const webhookName of webHooksArray) {
         client.webhooks[webhookName].id = process.env.WEBHOOK_ID;
-        client.webhooks[webhookName].token = process.env.WEBHOOK_TOKEN;
+        client.webhooks[webhookName].token = "XGSdbf2KEgt2tHyN1YblHDul60gjlPtqtlAo5CvM3mBvDVt6cCZnuanTc4etdDEYduW4";
     }
 }
 
@@ -152,7 +152,7 @@ fs.readdirSync('./src/handlers').forEach((dir) => {
     });
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login("ODEwNTcyMDU0OTgxNTA5MTMw.Gwb7sK.5shdrzYUwRs-y-65-2884eH6wa_jijl4fDlN-k");
 
 process.on('unhandledRejection', error => {
     console.error('Unhandled promise rejection:', error);
