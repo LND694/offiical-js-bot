@@ -152,10 +152,6 @@ fs.readdirSync('./src/handlers').forEach((dir) => {
     });
 });
 
-// Replace <client> with whatever variable your Client is
-client.on("ready", async () => {
-  console.log("Online!")
-})
 client.login(process.env.DISCORD_TOKEN);
 
 process.on('unhandledRejection', error => {
