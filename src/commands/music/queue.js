@@ -45,7 +45,8 @@ module.exports = async (client, interaction, args) => {
                 value: `${player.queue.current.title} (Requested by <@!${player.queue.current.requester.id}>)`
             }
         ],
-        type: 'editreply'
+        type: 'editreply',
+        footer: '© LND#0001'
     }, interaction)
 }
 

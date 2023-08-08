@@ -22,7 +22,8 @@ module.exports = async (client, interaction, args) => {
                 image: `https://cdn.discordapp.com/attachments/843487478881976381/874694192755007509/Bot_banner_vote.jpg`,
                 color: client.config.colors.succes,
                 components: [row],
-                type: 'editreply'
+                type: 'editreply',
+                footer: '© LND#0001'
             }, interaction)
         }
         if (!voted) {
@@ -32,7 +33,8 @@ module.exports = async (client, interaction, args) => {
                 image: `https://cdn.discordapp.com/attachments/843487478881976381/874694192755007509/Bot_banner_vote.jpg`,
                 color: client.config.colors.error,
                 components: [row],
-                type: 'editreply'
+                type: 'editreply',
+                footer: '© LND#0001'
             }, interaction)
         }
     }).catch(error => { client.errNormal({ text: `There was an error by checking this vote!`, editreply: true }, interaction) });

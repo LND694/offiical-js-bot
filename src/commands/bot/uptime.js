@@ -21,7 +21,8 @@ module.exports = async (client, interaction, args) => {
                 inline: true
             }
         ],
-        type: 'editreply'
+        type: 'editreply',
+        footer: '© LND#0001'
     }, interaction)
 }
 

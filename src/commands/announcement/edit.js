@@ -9,12 +9,14 @@ module.exports = async (client, interaction, args) => {
     client.embed({ 
         title: `📢・Announcement!`, 
         desc: message,
-        type: 'edit'
+        type: 'edit',
+        footer: '© LND#0001'
     }, editMessage);
 
     client.succNormal({
         text: `Announcement has been edit successfully!`,
-        type: 'ephemeraledit'
+        type: 'ephemeraledit',
+        footer: '© LND#0001'
     }, interaction);
 }
 

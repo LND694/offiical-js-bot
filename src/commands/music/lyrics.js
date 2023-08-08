@@ -41,7 +41,8 @@ module.exports = async (client, interaction, args) => {
         client.embed({
             title: `${client.emotes.normal.music}・Lyrics For ${search}`,
             desc: lyrics,
-            type: 'editreply'
+            type: 'editreply',
+            footer: '© LND#0001'
         }, interaction)
 }
 

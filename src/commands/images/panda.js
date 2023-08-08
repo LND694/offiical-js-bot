@@ -11,7 +11,8 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: `🐼・Random Panda`,
                 image: json.link,
-                type: 'editreply'
+                type: 'editreply',
+                fotter: '© LND#0001'
             }, interaction)
         }).catch({})
 }

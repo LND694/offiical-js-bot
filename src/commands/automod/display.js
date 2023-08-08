@@ -8,13 +8,15 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 title: "🤬・Blacklisted words",
                 desc: data.Words.join(", "),
-                type: 'editreply'
+                type: 'editreply',
+                footer: '© LND#0001'
             }, interaction)
         }
         else {
             client.errNormal({
                 error: `This guild has not data!`,
-                type: 'editreply'
+                type: 'editreply',
+                footer: '© LND#0001'
             }, interaction);
         }
     })

@@ -13,7 +13,8 @@ module.exports = async (client, interaction, args) => {
     client.embed({
         title: `🖼・Trump tweet`,
         image: img,
-        type: 'editreply'
+        type: 'editreply',
+        footer: '© LND#0001'
     }, interaction)
 }
 

@@ -15,7 +15,8 @@ module.exports = async (client, interaction, args) => {
         }).then((ch) => {
             client.embed({
                 title: `🔢・Counting`,
-                desc: `This is the start of counting! The first number is **1**`
+                desc: `This is the start of counting! The first number is **1**`,
+                footer: '© LND#0001'
             }, ch)
 
             client.createChannelSetup(Counting, ch, interaction)
@@ -29,7 +30,8 @@ module.exports = async (client, interaction, args) => {
         }).then((ch) => {
             client.embed({
                 title: `🔢・Guess the number`,
-                desc: `Guess the number between **1** and **10.000**!`
+                desc: `Guess the number between **1** and **10.000**!`,
+                footer: '© LND#0001'
             }, ch)
 
             client.createChannelSetup(GTN, ch, interaction)

@@ -23,7 +23,8 @@ module.exports = async (client, interaction, args) => {
 
             client.succNormal({
                 text: `Ticket panel has been set up successfully!`,
-                type: 'editreply'
+                type: 'editreply',
+                footer: '© LND#0001'
             }, interaction);
         }
         else {

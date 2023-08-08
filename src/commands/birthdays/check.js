@@ -12,7 +12,8 @@ module.exports = async (client, interaction, args) => {
         client.embed({ 
             title: `${client.emotes.normal.birthday}・Birthday check`, 
             desc: `${interaction.user.username} birthday is on ${data.Birthday}`,
-            type: 'editreply'
+            type: 'editreply',
+            footer: '© LND#0001'
         }, interaction)
     })
 }

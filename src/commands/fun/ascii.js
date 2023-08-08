@@ -16,6 +16,7 @@ module.exports = async (client, interaction, args) => {
             title: '💬・Ascii',
             desc: `\`\`\` ${data} \`\`\``,
             type: 'editreply',
+            footer: '© LND#0001'
         }, interaction);
     })
 }

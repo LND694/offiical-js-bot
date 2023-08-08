@@ -17,7 +17,8 @@ module.exports = async (client, interaction, args) => {
                 value: `${channel} (${channel.name})`
             }
         ],
-        type: 'editreply'
+        type: 'editreply',
+        footer: '© LND#0001'
     }, interaction);
 }
 

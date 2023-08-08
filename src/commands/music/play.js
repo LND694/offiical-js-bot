@@ -100,7 +100,8 @@ module.exports = async (client, interaction, args) => {
                             inline: true
                         }
                     ],
-                    type: 'editreply'
+                    type: 'editreply',
+                    footer: '© LND#0001'
                 }, interaction)
             }
             break;
@@ -172,7 +173,8 @@ module.exports = async (client, interaction, args) => {
                     }
                 ],
                 components: [row, row2],
-                type: 'editreply'
+                type: 'editreply',
+                footer: '© LND#0001'
             }, interaction)
 
             try {
@@ -232,7 +234,8 @@ module.exports = async (client, interaction, args) => {
                             inline: true
                         }
                     ],
-                    type: 'editreply'
+                    type: 'editreply',
+                    footer: '© LND#0001'
                 }, interaction)
             }
         }

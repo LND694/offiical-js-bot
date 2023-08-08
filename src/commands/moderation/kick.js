@@ -53,7 +53,8 @@ module.exports = async (client, interaction, args) => {
     member.kick(reason)
     client.succNormal({
       text: "The given user has been successfully kicked, but has not received a notification!",
-      type: 'editreply'
+      type: 'editreply',
+      footer: '© LND#0001'
     }, interaction);
   });
 }

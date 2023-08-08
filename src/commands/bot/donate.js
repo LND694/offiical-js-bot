@@ -15,7 +15,8 @@ module.exports = async (client, interaction, args) => {
         thumbnail: client.user.avatarURL({ dynamic: true }),
         url: "https://github.com/sponsors/CorwinDev",
         components: [row],
-        type: 'editreply'
+        type: 'editreply',
+        footer: '© LND#0001'
     }, interaction)
 }
 

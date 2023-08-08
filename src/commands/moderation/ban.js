@@ -53,7 +53,8 @@ module.exports = async (client, interaction, args) => {
     member.ban({ reason: reason })
     client.succNormal({
       text: "The given user has been successfully banned, but has not received a notification!",
-      type: 'editreply'
+      type: 'editreply',
+      footer: '© LND#0001'
     }, interaction);
   });
 }

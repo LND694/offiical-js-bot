@@ -12,6 +12,7 @@ module.exports = async (client, interaction, args) => {
                 title: `💡・Random panda fact`,
                 desc: json.fact,
                 type: 'editreply',
+                footer: '© LND#0001'
             }, interaction);
         }).catch({})
 }

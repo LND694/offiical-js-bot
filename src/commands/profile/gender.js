@@ -32,6 +32,7 @@ module.exports = async (client, interaction, args) => {
             client.embed({
                 desc: `Select a gender`,
                 type: 'editreply',
+                footer: '© LND#0001',
                 components: [row],
             }, interaction).then(msg => {
                 const filter = i => i.user.id === interaction.user.id;

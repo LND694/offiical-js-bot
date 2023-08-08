@@ -166,7 +166,8 @@ module.exports = async (client, interaction, args) => {
                     name: "ℹ️┆About me",
                     value: `${data.Aboutme || 'Not set'}`,
                     inline: false
-                },], type: 'editreply'
+                },], type: 'editreply',
+                footer: '© LND#0001'
             }, interaction);
         }
         else {

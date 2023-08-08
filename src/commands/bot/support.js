@@ -15,7 +15,8 @@ module.exports = async (client, interaction, args) => {
         image: "https://cdn.discordapp.com/attachments/843487478881976381/874694194474668052/Bot_banner_invite.jpg",
         url: client.config.discord.serverInvite,
         components: [row],
-        type: 'editreply'
+        type: 'editreply',
+        footer: '© LND#0001'
     }, interaction)
 }
 

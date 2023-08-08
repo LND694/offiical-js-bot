@@ -29,7 +29,8 @@ module.exports = async (client, interaction, args) => {
             }, interaction);
 
             client.embed({ 
-                desc: `${interaction.user} is now afk! **Reason:** ${reason}` 
+                desc: `${interaction.user} is now afk! **Reason:** ${reason}`,
+                footer: '© LND#0001'
             }, interaction.channel)
         }
     })

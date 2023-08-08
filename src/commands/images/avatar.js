@@ -5,7 +5,8 @@ module.exports = async (client, interaction, args) => {
   client.embed({
     title: `🖼・User avatar`,
     image: user.displayAvatarURL({ dynamic: false, size: 1024 }),
-    type: 'editreply'
+    type: 'editreply',
+    footer: '© LND#0001'
   }, interaction)
 }
 
