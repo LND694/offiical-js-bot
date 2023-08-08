@@ -42,6 +42,10 @@ module.exports = async (client, interaction, args) => {
                 .setEmoji("⏭️")
                 .setCustomId("Bot-musicnext")
                 .setStyle(Discord.ButtonStyle.Primary),
+            new Discord.ButtonBuilder()
+                .setEmoji("🔁")
+                .setCustomId("Bot-musicloop")
+                .setStyle(Discord.ButtonStyle.Primary)
         );
 
     client.embed({

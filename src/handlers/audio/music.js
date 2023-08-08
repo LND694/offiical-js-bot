@@ -35,6 +35,10 @@ module.exports = (client) => {
                             .setEmoji(client.emotes.music.next)
                             .setCustomId("Bot-musicnext")
                             .setStyle(Discord.ButtonStyle.Secondary),
+                        new Discord.ButtonBuilder()
+                            .setEmoji(client.emotes.music.loop)
+                            .setCustomId("Bot-musicloop")
+                            .setStyle(Discord.ButtonStyle.Secondary)
                     );
 
                 client.embed({
@@ -80,6 +84,10 @@ module.exports = (client) => {
                             .setEmoji(client.emotes.music.next)
                             .setCustomId("Bot-musicnext")
                             .setStyle(Discord.ButtonStyle.Secondary),
+                        new Discord.ButtonBuilder()
+                            .setEmoji(client.emotes.music.loop)
+                            .setCustomId("Bot-musicloop")
+                            .setStyle(Discord.ButtonStyle.Secondary)
                     );
 
                 client.embed({
@@ -140,6 +148,10 @@ module.exports = (client) => {
                             .setEmoji("⏭️")
                             .setCustomId("Bot-musicnext")
                             .setStyle(Discord.ButtonStyle.Primary),
+                        new Discord.ButtonBuilder()
+                            .setEmoji("🔁")
+                            .setCustomId("Bot-musicloop")
+                            .setStyle(Discord.ButtonStyle.Primary)
                     );
 
                 client.embed({
@@ -198,6 +210,10 @@ module.exports = (client) => {
                             .setEmoji("⏭️")
                             .setCustomId("Bot-musicnext")
                             .setStyle(Discord.ButtonStyle.Primary),
+                        new Discord.ButtonBuilder()
+                            .setEmoji("🔁")
+                            .setCustomId("Bot-musicloop")
+                            .setStyle(Discord.ButtonStyle.Primary)
                     );
 
                 client.embed({
@@ -227,6 +243,25 @@ module.exports = (client) => {
                 }, interaction.message)
 
                 player.play(player.queue.previous)
+            }
+            if(interaction.customId == "Bot-musicloop")
+            {
+                interaction.deferUpdate();
+
+                const player = client.player.players.get(interaction.guild.id);
+                player.setTrackRepeat(!player.trackRepeat);
+                const trackRepeat = player.trackRepeat ? "enabled" : "disabled";
+                const embedData = interaction.message.embeds[0];
+                client.embed({
+                    title: embedData.title,
+                    url: embedData.url,
+                    desc: `Loop is **${trackRepeat}** for the current song`,
+                    thumbnail: embedData.thumbnail.url,
+                    fields: embedData.fields,
+                    components: [row],
+                    color: client.config.colors.error,
+                    type: 'edit'
+                }, interaction.message)
             }
         }
     }).setMaxListeners(0);
