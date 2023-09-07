@@ -105,3 +105,6 @@ dist
 src/config/*
 
 package-lock.json
+
+#env file
+.env
