@@ -252,6 +252,34 @@ module.exports = (client) => {
                 player.setTrackRepeat(!player.trackRepeat);
                 const trackRepeat = player.trackRepeat ? "enabled" : "disabled";
                 const embedData = interaction.message.embeds[0];
+
+                let row = new Discord.ActionRowBuilder()
+                    .addComponents(
+                        new Discord.ButtonBuilder()
+                            .setEmoji(client.emotes.music.previous)
+                            .setCustomId("Bot-musicprev")
+                            .setStyle(Discord.ButtonStyle.Secondary),
+
+                        new Discord.ButtonBuilder()
+                            .setEmoji(client.emotes.music.pause)
+                            .setCustomId("Bot-musicstart")
+                            .setStyle(Discord.ButtonStyle.Secondary),
+
+                        new Discord.ButtonBuilder()
+                            .setEmoji(client.emotes.music.stop)
+                            .setCustomId("Bot-musicstop")
+                            .setStyle(Discord.ButtonStyle.Secondary),
+
+                        new Discord.ButtonBuilder()
+                            .setEmoji(client.emotes.music.next)
+                            .setCustomId("Bot-musicnext")
+                            .setStyle(Discord.ButtonStyle.Secondary),
+                        new Discord.ButtonBuilder()
+                            .setEmoji(client.emotes.music.loop)
+                            .setCustomId("Bot-musicloop")
+                            .setStyle(Discord.ButtonStyle.Secondary)
+                    );
+
                 client.embed({
                     title: embedData.title,
                     url: embedData.url,
