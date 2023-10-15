@@ -22,6 +22,10 @@ module.exports = (client, player, track) => {
                 .setEmoji(client.emotes.music.next)
                 .setCustomId("Bot-musicnext")
                 .setStyle(Discord.ButtonStyle.Secondary),
+            new Discord.ButtonBuilder()
+                .setEmoji(client.emotes.music.loop)
+                .setCustomId("Bot-musicloop")
+                .setStyle(Discord.ButtonStyle.Secondary)
         );
 
     const channel = client.channels.cache.get(player.textChannel);
