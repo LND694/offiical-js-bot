@@ -1,5 +1,4 @@
-const Discord = require('discord.js');
-const lyricsFinder = require("lyrics-finder");
+const genuis = require('genius-lyrics-api');
 
 module.exports = async (client, interaction, args) => {
     let search = "";
@@ -29,18 +28,27 @@ module.exports = async (client, interaction, args) => {
             search = interaction.options.getString('song');
         }
 
-        let lyrics = "";
-
+        let lyricsSTR = "";
+        search = search.split(" (")[0].split(" - ");//get array of artist and title
         try {
-            lyrics = await lyricsFinder(search, "");
-            if (!lyrics) lyrics = `No lyrics found for ${search} :x:`;
+            const options = {
+                apiKey: process.env.GENIUS_API,
+                title: search[1],
+                artist: search[0],
+                optimizeQuery: true
+            };
+            
+            await genuis.getLyrics(options).then((lyrics) => lyricsSTR = lyrics);
+            
+            if (!lyricsSTR) lyricsSTR = `No lyrics found for ${search} :x:`;
         } catch (error) {
-            lyrics = `No lyrics found for ${search} :x:`;
+            console.log(error);
+            lyricsSTR = `No lyrics found for ${search} :x:`;
         }
 
         client.embed({
             title: `${client.emotes.normal.music}・Lyrics For ${search}`,
-            desc: lyrics,
+            desc: lyricsSTR,
             type: 'editreply',
             footer: '© LND#0001'
         }, interaction)
