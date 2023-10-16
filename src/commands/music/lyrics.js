@@ -2,7 +2,7 @@ const genuis = require('genius-lyrics-api');
 
 module.exports = async (client, interaction, args) => {
     let search = "";
-
+    const trailingSpacesRegex = /\s+$/;
         const player = client.player.players.get(interaction.guild.id);
 
         const channel = interaction.member.voice.channel;
@@ -29,12 +29,12 @@ module.exports = async (client, interaction, args) => {
         }
 
         let lyricsSTR = "";
-        search = search.split(" (")[0].split(" - ");//get array of artist and title
+        search = search.split(" (")[0].split("-");//get array of artist and title
         try {
             const options = {
                 apiKey: process.env.GENIUS_API,
-                title: search[1],
-                artist: search[0],
+                title: search[1].replace(trailingSpacesRegex, ""),//delete trail spaces
+                artist: search[0].replace(trailingSpacesRegex, ""),
                 optimizeQuery: true
             };
             

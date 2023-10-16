@@ -47,7 +47,7 @@ module.exports = {
             subcommand
                 .setName('lyrics')
                 .setDescription('Get the lyrics of the current song')
-                .addStringOption(option => option.setName('song').setDescription('Enter a song name'))
+                .addStringOption(option => option.setName('song').setDescription('Enter a artist-song format'))
         )
         .addSubcommand(subcommand =>
             subcommand
