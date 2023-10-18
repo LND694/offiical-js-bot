@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const Voice = require('@discordjs/voice');
 
 module.exports = (client) => {
     client.on(Discord.Events.InteractionCreate, async (interaction) => {
