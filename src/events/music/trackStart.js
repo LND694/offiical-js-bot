@@ -29,29 +29,31 @@ module.exports = (client, player, track) => {
         );
 
     const channel = client.channels.cache.get(player.textChannel);
-
-    client.embed({
-        title: `${client.emotes.normal.music}・${track.title}`,
-        url: track.uri,
-        desc: `Music started in <#${player.voiceChannel}>!`,
-        thumbnail: track.thumbnail,
-        fields: [
-            {
-                name: `👤┆Requested By`,
-                value: `${track.requester}`,
-                inline: true
-            },
-            {
-                name: `${client.emotes.normal.clock}┆Ends at`,
-                value: `<t:${((Date.now() / 1000) + (track.duration / 1000)).toFixed(0)}:f>`,
-                inline: true
-            },
-            {
-                name: `🎬┆Author`,
-                value: `${track.author}`,
-                inline: true
-            }
-        ],
-        components: [row],
-    }, channel)
+    if(!player.trackRepeat)
+    {
+        client.embed({
+            title: `${client.emotes.normal.music}・${track.title}`,
+            url: track.uri,
+            desc: `Music started in <#${player.voiceChannel}>!`,
+            thumbnail: track.thumbnail,
+            fields: [
+                {
+                    name: `👤┆Requested By`,
+                    value: `${track.requester}`,
+                    inline: true
+                },
+                {
+                    name: `${client.emotes.normal.clock}┆Ends at`,
+                    value: `<t:${((Date.now() / 1000) + (track.duration / 1000)).toFixed(0)}:f>`,
+                    inline: true
+                },
+                {
+                    name: `🎬┆Author`,
+                    value: `${track.author}`,
+                    inline: true
+                }
+            ],
+            components: [row],
+        }, channel)
+    }
 };
