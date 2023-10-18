@@ -1,6 +1,5 @@
 const slotItems = ["🍇", "🍉", "🍊", "🍎", "🍓", "🍒"];
 const Discord = require('discord.js');
-const ms = require("parse-ms");
 
 const Schema = require("../../database/models/economy");
 

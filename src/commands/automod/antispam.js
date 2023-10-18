@@ -1,5 +1,3 @@
-const Discord = require('discord.js');
-
 const Schema = require('../../database/models/functions');
 
 module.exports = async (client, interaction, args) => {

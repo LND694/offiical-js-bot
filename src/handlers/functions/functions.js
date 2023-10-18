@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const fetch = require("node-fetch");
+const fetch = require("node-fetch-commonjs");
 
 const Functions = require("../../database/models/functions");
 const VoiceSchema = require("../../database/models/voiceChannels");
