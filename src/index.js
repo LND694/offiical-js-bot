@@ -55,26 +55,26 @@ console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), chalk.red(`Ve
 console.log(`\u001b[0m`);
 
 manager.on('shardCreate', shard => {
-    let embed = new Discord.EmbedBuilder()
-        .setTitle(`🆙・Launching shard`)
-        .setDescription(`A shard has just been launched`)
-        .setFields([
-            {
-                name: "🆔┆ID",
-                value: `${shard.id + 1}/${manager.totalShards}`,
-                inline: true
-            },
-            {
-                name: `📃┆State`,
-                value: `Starting up...`,
-                inline: true
-            }
-        ])
-        .setColor(config.colors.normal)
-    startLogs.send({
-        username: 'Bot Logs',
-        embeds: [embed],
-    });
+    // let embed = new Discord.EmbedBuilder()
+    //     .setTitle(`🆙・Launching shard`)
+    //     .setDescription(`A shard has just been launched`)
+    //     .setFields([
+    //         {
+    //             name: "🆔┆ID",
+    //             value: `${shard.id + 1}/${manager.totalShards}`,
+    //             inline: true
+    //         },
+    //         {
+    //             name: `📃┆State`,
+    //             value: `Starting up...`,
+    //             inline: true
+    //         }
+    //     ])
+    //     .setColor(config.colors.normal)
+    // startLogs.send({
+    //     username: 'Bot Logs',
+    //     embeds: [embed],
+    // });
 
     console.log(chalk.blue(chalk.bold(`System`)), (chalk.white(`>>`)), (chalk.green(`Starting`)), chalk.red(`Shard #${shard.id + 1}`), (chalk.white(`...`)))
     console.log(`\u001b[0m`);
