@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const Voice = require('@discordjs/voice');
 
 module.exports = (client) => {
     client.on(Discord.Events.InteractionCreate, async (interaction) => {
@@ -121,6 +120,7 @@ module.exports = (client) => {
                 interaction.deferUpdate();
 
                 const player = client.player.players.get(interaction.guild.id);
+                player.setTrackRepeat(false);
                 if (!player) return;
 
                 player.stop();
@@ -185,6 +185,7 @@ module.exports = (client) => {
                 interaction.deferUpdate();
 
                 const player = client.player.players.get(interaction.guild.id);
+                player.setTrackRepeat(false);
                 if (!player || !player.queue.previous) return;
 
                 const track = player.queue.previous;
