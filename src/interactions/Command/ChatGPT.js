@@ -6,7 +6,12 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('chatgpt')
         .setDescription('play with chatgpt')
-        .addStringOption((option) => option.setName('text').setDescription('enter a text for chatgpt').setRequired(true))
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('ask')
+                .setDescription('ask chatgpt')
+                .addStringOption((option) => option.setName('text').setDescription('enter a text for chatgpt').setRequired(true))
+        )
     ,
 
     /** 
