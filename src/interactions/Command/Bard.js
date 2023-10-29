@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('chatgpt')
+        .setName('bard')
         .setDescription('play with chatgpt')
         .addSubcommand(subcommand =>
             subcommand
