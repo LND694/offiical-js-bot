@@ -5,11 +5,11 @@ const Discord = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('bard')
-        .setDescription('play with chatgpt')
+        .setDescription('play with bard')
         .addSubcommand(subcommand =>
             subcommand
                 .setName('ask')
-                .setDescription('ask chatgpt')
+                .setDescription('ask bard')
                 .addStringOption((option) => option.setName('text').setDescription('enter a text for chatgpt').setRequired(true))
         )
     ,
